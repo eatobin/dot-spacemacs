@@ -47,9 +47,12 @@ values."
      csv
      emacs-lisp
      git
+     (haskell :variables
+              haskell-completion-backend 'lsp)
      helm
      html
      javascript
+     lsp
      scheme
      (shell :variables
             shell-default-shell 'ansi-term
