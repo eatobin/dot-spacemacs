@@ -332,21 +332,22 @@ values."
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
-It is called immediately after `dotspacemacs/init', before layer configuration
-executes.
- This function is mostly useful for variables that need to be set
-before packages are loaded. If you are unsure, you should try in setting them in
-`dotspacemacs/user-config' first."
+  It is called immediately after `dotspacemacs/init', before layer configuration
+  executes.
+  This function is mostly useful for variables that need to be set
+  before packages are loaded. If you are unsure, you should try in setting them in
+  `dotspacemacs/user-config' first."
   (setq exec-path-from-shell-check-startup-files nil)
-  (setq-default git-magit-status-fullscreen t))
+  (setq-default git-magit-status-fullscreen t)
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
-This function is called at the very end of Spacemacs initialization after
-layers configuration.
-This is the place where most of your configurations should be done. Unless it is
-explicitly specified that a variable should be set before a package is loaded,
-you should place your code here."
+  This function is called at the very end of Spacemacs initialization after
+  layers configuration.
+  This is the place where most of your configurations should be done. Unless it is
+  explicitly specified that a variable should be set before a package is loaded,
+  you should place your code here."
   (setq evil-insert-state-cursor '(hbar "red")
         evil-normal-state-cursor '(box "red"))
   (blink-cursor-mode 1)
@@ -357,38 +358,41 @@ you should place your code here."
   nil
   :lighter ""
   :global nil
-  (if stack-exec-path-mode
-      (when (and (executable-find "stack")
-                 (locate-dominating-file default-directory "stack.yaml"))
-        (let ((stack-path (replace-regexp-in-string
-                           "[\r\n]+\\'" ""
-                           (shell-command-to-string (concat "stack exec -- sh -c "
-                                                            (shell-quote-argument "echo $PATH"))))))
-          (setq-local exec-path (seq-uniq (parse-colon-path stack-path) 'string-equal))
-          (make-local-variable 'process-environment)
-          (setenv "PATH" (string-join exec-path path-separator))))
-    (kill-local-variable 'exec-path)
-    (kill-local-variable 'process-environment)))
+    (if stack-exec-path-mode
+        (when (and (executable-find "stack")
+                   (locate-dominating-file default-directory "stack.yaml"))
+          (let ((stack-path (replace-regexp-in-string
+                             "[\r\n]+\\'" ""
+                             (shell-command-to-string (concat "stack exec -- sh -c "
+                                                              (shell-quote-argument "echo $PATH"))))))
+            (setq-local exec-path (seq-uniq (parse-colon-path stack-path) 'string-equal))
+            (make-local-variable 'process-environment)
+            (setenv "PATH" (string-join exec-path path-separator))))
+      (kill-local-variable 'exec-path)
+      (kill-local-variable 'process-environment)
+    )
+  )
 
-(add-hook 'haskell-mode-hook 'stack-exec-path-mode))
+  (add-hook 'haskell-mode-hook 'stack-exec-path-mode)
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+  This is an auto-generated function, do not modify its content directly, use
+  Emacs customize menu instead.
+  This function is called at the very end of Spacemacs initialization."
+  (custom-set-variables
+     ;; custom-set-variables was added by Custom.
+     ;; If you edit it by hand, you could mess it up, so be careful.
+     ;; Your init file should contain only one such instance.
+     ;; If there is more than one, they won't work right.
+  )
+  (custom-set-faces
+     ;; custom-set-faces was added by Custom.
+     ;; If you edit it by hand, you could mess it up, so be careful.
+     ;; Your init file should contain only one such instance.
+     ;; If there is more than one, they won't work right.
+  )
 )
