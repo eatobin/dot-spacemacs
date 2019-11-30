@@ -48,13 +48,11 @@ values."
      emacs-lisp
      (git :variables
           git-gutter-use-fringe t)
-     haskell
-     ; (haskell :variables
-     ;          haskell-completion-backend 'lsp)
+     (haskell :variables
+              haskell-enable-hindent t)
      helm
      html
      javascript
-     ; lsp
      scheme
      (shell :variables
             shell-default-shell 'ansi-term
