@@ -48,12 +48,13 @@ values."
      emacs-lisp
      (git :variables
           git-gutter-use-fringe t)
-     (haskell :variables
-              haskell-completion-backend 'lsp)
+     haskell
+     ; (haskell :variables
+     ;          haskell-completion-backend 'lsp)
      helm
      html
      javascript
-     lsp
+     ; lsp
      scheme
      (shell :variables
             shell-default-shell 'ansi-term
@@ -350,7 +351,26 @@ you should place your code here."
         evil-normal-state-cursor '(box "red"))
   (blink-cursor-mode 1)
   (setq geiser-active-implementations '(chez racket))
-  (require 'quack))
+  (require 'quack)
+  (define-minor-mode stack-exec-path-mode
+  "If this is a stack project, set `exec-path' to the path \"stack exec\" would use."
+  nil
+  :lighter ""
+  :global nil
+  (if stack-exec-path-mode
+      (when (and (executable-find "stack")
+                 (locate-dominating-file default-directory "stack.yaml"))
+        (let ((stack-path (replace-regexp-in-string
+                           "[\r\n]+\\'" ""
+                           (shell-command-to-string (concat "stack exec -- sh -c "
+                                                            (shell-quote-argument "echo $PATH"))))))
+          (setq-local exec-path (seq-uniq (parse-colon-path stack-path) 'string-equal))
+          (make-local-variable 'process-environment)
+          (setenv "PATH" (string-join exec-path path-separator))))
+    (kill-local-variable 'exec-path)
+    (kill-local-variable 'process-environment)))
+
+(add-hook 'haskell-mode-hook 'stack-exec-path-mode))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
