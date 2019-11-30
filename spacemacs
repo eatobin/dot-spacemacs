@@ -46,7 +46,8 @@ values."
      common-lisp
      csv
      emacs-lisp
-     git
+     (git :variables
+          git-gutter-use-fringe t)
      (haskell :variables
               haskell-completion-backend 'lsp)
      helm
@@ -61,8 +62,8 @@ values."
      sql
      themes-megapack
      (version-control :variables
-                      version-control-diff-tool 'git-gutter
-                      version-control-diff-side 'right)
+                      version-control-diff-tool 'diff-hl
+                      version-control-global-margin t)
      ;; ivy
      ;; markdown
      ;; org
