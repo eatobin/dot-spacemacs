@@ -61,7 +61,7 @@ values."
      sql
      themes-megapack
      (version-control :variables
-                      version-control-diff-tool 'diff-hl
+                      version-control-diff-tool 'git-gutter+
                       version-control-global-margin t)
      ;; ivy
      ;; markdown
