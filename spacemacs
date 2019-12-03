@@ -38,7 +38,6 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ; Show suggestions by most commonly used
      (auto-completion :variables
                       auto-completion-enable-sort-by-usage t)
      better-defaults
