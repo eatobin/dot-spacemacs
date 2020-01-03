@@ -148,11 +148,13 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-dark
+   dotspacemacs-themes '(material
+                         material-light
+                         monokai
+                         solarized-dark
                          solarized-light
                          spacemacs-dark
-                         spacemacs-light
-                         monokai)
+                         spacemacs-light)
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
    ;; first three are spaceline themes. `doom' is the doom-emacs mode-line.
