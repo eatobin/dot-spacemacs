@@ -148,11 +148,11 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(monokai
+   dotspacemacs-themes '(solarized-dark
                          solarized-light
-                         solarized-dark
                          spacemacs-dark
-                         spacemacs-light)
+                         spacemacs-light
+                         monokai)
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
    ;; first three are spaceline themes. `doom' is the doom-emacs mode-line.
@@ -369,8 +369,14 @@ values."
       (kill-local-variable 'process-environment)
     )
   )
-
   (add-hook 'haskell-mode-hook 'stack-exec-path-mode)
+  (defun toggle-search-pattern-highlight ()
+    "Toggle the previous search patterns highlight On or Off."
+    (interactive)
+    (if (evil-ex-hl-active-p 'evil-ex-search)
+        (evil-ex-nohighlight)
+      (evil-ex-search-activate-highlight evil-ex-search-pattern)))
+  (global-set-key (kbd "<f8>") 'toggle-search-pattern-highlight)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
