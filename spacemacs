@@ -61,7 +61,8 @@ values."
      themes-megapack
      (version-control :variables
                       version-control-diff-tool 'git-gutter+
-                      version-control-global-margin t)
+                      version-control-global-margin t
+                      version-control-diff-side 'left)
      ;; ivy
      ;; markdown
      ;; org
