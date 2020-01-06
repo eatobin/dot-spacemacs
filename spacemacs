@@ -45,6 +45,7 @@ values."
      common-lisp
      csv
      emacs-lisp
+     evil-commentary
      (git :variables
           git-gutter-use-fringe t)
      (haskell :variables
