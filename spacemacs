@@ -48,8 +48,6 @@ values."
      evil-commentary
      (git :variables
           git-gutter-use-fringe t)
-     (haskell :variables
-              haskell-enable-hindent t)
      helm
      html
      javascript
@@ -64,6 +62,8 @@ values."
                       version-control-diff-tool 'git-gutter+
                       version-control-global-margin t
                       version-control-diff-side 'left)
+     ;; (haskell :variables
+     ;;          haskell-enable-hindent t)
      ;; ivy
      ;; markdown
      ;; org
