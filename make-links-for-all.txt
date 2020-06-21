@@ -1,8 +1,8 @@
 ln -s {source-filename} {symbolic-filename}
 
-ln -s ~/dotfiles/spacemacs/spacemacs ~/.spacemacs
-ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/vim/init.vim ~/.config/nvim/init.vim
+ln -s ~/dotfiles/dot-spacemacs/spacemacs ~/.spacemacs
+ln -s ~/dotfiles/dot-tmux/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/dot-vim/init.vim ~/.config/nvim/init.vim
 
 For AWS:
 ln -s /home/ec2-user/Dropbox/spacemacs-and-vim-master/vimrc /home/ec2-user/.vimrc

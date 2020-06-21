@@ -2,7 +2,7 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-;; Hi Eric! I'm really: ~/dotfiles/spacemacs/spacemacs
+;; Hi Eric! I'm really: ~/dotfiles/dot-spacemacs/spacemacs
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
