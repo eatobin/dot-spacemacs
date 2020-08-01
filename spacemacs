@@ -76,8 +76,8 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-    yasnippet-snippets
-    quack)
+                                      yasnippet-snippets
+                                      quack)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -340,7 +340,7 @@ values."
   `dotspacemacs/user-config' first."
   (setq exec-path-from-shell-check-startup-files nil)
   (setq-default git-magit-status-fullscreen t)
-)
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -355,10 +355,10 @@ values."
   (setq geiser-active-implementations '(chez racket))
   (require 'quack)
   (define-minor-mode stack-exec-path-mode
-  "If this is a stack project, set `exec-path' to the path \"stack exec\" would use."
-  nil
-  :lighter ""
-  :global nil
+    "If this is a stack project, set `exec-path' to the path \"stack exec\" would use."
+    nil
+    :lighter ""
+    :global nil
     (if stack-exec-path-mode
         (when (and (executable-find "stack")
                    (locate-dominating-file default-directory "stack.yaml"))
@@ -371,8 +371,8 @@ values."
             (setenv "PATH" (string-join exec-path path-separator))))
       (kill-local-variable 'exec-path)
       (kill-local-variable 'process-environment)
+      )
     )
-  )
   (add-hook 'haskell-mode-hook 'stack-exec-path-mode)
   (defun toggle-search-pattern-highlight ()
     "Toggle the previous search patterns highlight On or Off."
@@ -381,7 +381,7 @@ values."
         (evil-ex-nohighlight)
       (evil-ex-search-activate-highlight evil-ex-search-pattern)))
   (global-set-key (kbd "<f8>") 'toggle-search-pattern-highlight)
-)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -391,15 +391,15 @@ values."
   Emacs customize menu instead.
   This function is called at the very end of Spacemacs initialization."
   (custom-set-variables
-     ;; custom-set-variables was added by Custom.
-     ;; If you edit it by hand, you could mess it up, so be careful.
-     ;; Your init file should contain only one such instance.
-     ;; If there is more than one, they won't work right.
-  )
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
   (custom-set-faces
-     ;; custom-set-faces was added by Custom.
-     ;; If you edit it by hand, you could mess it up, so be careful.
-     ;; Your init file should contain only one such instance.
-     ;; If there is more than one, they won't work right.
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
   )
-)
