@@ -41,7 +41,8 @@ values."
      (auto-completion :variables
                       auto-completion-enable-sort-by-usage t)
      better-defaults
-     clojure
+     (clojure :variables
+              clojure-enable-linters 'clj-kondo)
      common-lisp
      csv
      emacs-lisp
