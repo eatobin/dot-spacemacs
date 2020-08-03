@@ -58,6 +58,7 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
      sql
+     syntax-checking
      themes-megapack
      (version-control :variables
                       version-control-diff-tool 'git-gutter+
@@ -70,7 +71,6 @@ values."
      ;; org
      ;; racket
      ;; spell-checking
-     ;; syntax-checking
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
