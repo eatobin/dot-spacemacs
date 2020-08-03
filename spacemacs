@@ -63,7 +63,7 @@ values."
      (version-control :variables
                       version-control-diff-tool 'git-gutter+
                       version-control-global-margin t
-                      version-control-diff-side 'left)
+                      version-control-diff-side 'right)
      ;; (haskell :variables
      ;;          haskell-enable-hindent t)
      ;; ivy
