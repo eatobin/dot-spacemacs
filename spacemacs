@@ -354,6 +354,7 @@ values."
         evil-normal-state-cursor '(box "red"))
   (blink-cursor-mode 1)
   (setq geiser-active-implementations '(chez racket))
+  (setq git-gutter+-modified-sign "=")
   (require 'quack)
   (define-minor-mode stack-exec-path-mode
     "If this is a stack project, set `exec-path' to the path \"stack exec\" would use."
