@@ -6,8 +6,8 @@
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
-You should not put any user code in this function besides modifying the variable
-values."
+  You should not put any user code in this function besides modifying the variable
+  values."
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
@@ -94,10 +94,10 @@ values."
 
 (defun dotspacemacs/init ()
   "Initialization function.
-This function is called at the very startup of Spacemacs initialization
-before layers configuration.
-You should not put any user code in there besides modifying the variable
-values."
+  This function is called at the very startup of Spacemacs initialization
+  before layers configuration.
+  You should not put any user code in there besides modifying the variable
+  values."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
@@ -141,8 +141,8 @@ values."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   ; dotspacemacs-startup-lists '((recents . 5)
-   ;                              (projects . 5))
+                                        ; dotspacemacs-startup-lists '((recents . 5)
+                                        ;                              (projects . 5))
    dotspacemacs-startup-lists nil
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
