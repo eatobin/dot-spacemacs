@@ -4,9 +4,6 @@ ln -s ~/dotfiles/dot-spacemacs/spacemacs ~/.spacemacs
 ln -s ~/dotfiles/dot-tmux/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/dot-vim/init.vim ~/.config/nvim/init.vim
 
-ln -s ~/Dropbox/sublime-text-3 ~/.config/sublime-text-3
-[eric@eric-macbook Application Support]$ ln -s ~/Dropbox/sublime-text-3 ./"Sublime Text 3"
-
 For AWS:
 ln -s /home/ec2-user/Dropbox/spacemacs-and-vim-master/vimrc /home/ec2-user/.vimrc
 
