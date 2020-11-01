@@ -48,7 +48,7 @@
      evil-commentary
      (git :variables
           git-gutter-use-fringe t)
-     githubX
+     github
      helm
      html
      javascript
