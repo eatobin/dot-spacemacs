@@ -357,6 +357,8 @@
   (setq geiser-active-implementations '(chez racket))
   (setq git-gutter+-modified-sign "=")
   (require 'quack)
+  (setq magit-repository-directories
+        '(("~/clojure_projects/" . 2)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
