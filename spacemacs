@@ -342,6 +342,8 @@
   `dotspacemacs/user-config' first."
   (setq exec-path-from-shell-check-startup-files nil)
   (setq-default git-magit-status-fullscreen t)
+  (when (string= system-type "darwin")       
+    (setq insert-directory-program "gls" dired-use-ls-dired t))
   )
 
 (defun dotspacemacs/user-config ()
