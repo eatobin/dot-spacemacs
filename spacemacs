@@ -361,7 +361,6 @@
   (require 'quack)
   (setq magit-repository-directories
         '(("~/clojure_projects/" . 2)))
-  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
