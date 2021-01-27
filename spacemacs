@@ -376,7 +376,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(safe-local-variable-values
-   '((cider-clojure-cli-global-options . "-A:eat/orchestra:eat/test")
+   '((cider-clojure-cli-aliases . "-A:eat/orchestra:eat/test")
      (javascript-backend . tide)
      (javascript-backend . tern)
      (javascript-backend . lsp))))
