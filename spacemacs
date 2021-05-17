@@ -51,7 +51,7 @@
               clojure-toplevel-inside-comment-form t  ;; evaluate expressions in comment as top level
               cider-result-overlay-position 'at-point ;; results shown right after expression
               cider-overlays-use-font-lock t
-              cider-repl-buffer-size-limit 100)       ;; limit lines shown in REPL buffer
+              cider-repl-buffer-size-limit 100000)    ;; limit characters shown in REPL buffer
      common-lisp
      csv
      emacs-lisp
