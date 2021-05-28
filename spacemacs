@@ -79,6 +79,8 @@
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
                                       yasnippet-snippets
+                                      geiser-chez
+                                      geiser-racket
                                       quack)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -356,9 +358,13 @@
   (setq evil-insert-state-cursor '(hbar "red")
         evil-normal-state-cursor '(box "red"))
   (blink-cursor-mode 1)
+  (add-to-list 'load-path "/home/eric/.emacs.d/private/local/chez/")
+  (add-to-list 'load-path "/home/eric/.emacs.d/private/local/racket/")
+  (require 'geiser-chez)
+  (require 'geiser-racket)
+  (require 'quack)
   (setq geiser-active-implementations '(chez racket))
   (setq git-gutter+-modified-sign "=")
-  (require 'quack)
   (setq magit-repository-directories
         '(("~/clojure_projects/" . 2)))
   )
