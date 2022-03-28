@@ -346,6 +346,7 @@
   (setq-default git-magit-status-fullscreen t)
   (when (string= system-type "darwin")
     (setq insert-directory-program "gls" dired-use-ls-dired t))
+  (setq-default forge-add-default-bindings nil)
   )
 
 (defun dotspacemacs/user-config ()
